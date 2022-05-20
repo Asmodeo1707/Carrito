@@ -1,0 +1,261 @@
+:root {
+  --navbar-height: 60px;
+  --text-size: 16px;
+  --icons-size: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --text-size: 18px;
+    --icons-size: 40px;
+  }
+}
+
+html {
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #333;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.navbar {
+  background-color: #ff443ee8;
+  height: var(--navbar-height);
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.navbar__logo {
+  padding-left: 15px;
+}
+
+.navbar__container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: inherit;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #333;
+  text-decoration: none;
+}
+
+.navbar__logo-text {
+  font-size: var(--text-size);
+}
+
+.navbar__logo-icon {
+  font-size: var(--icons-size);
+}
+
+.navbar__list {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+li a{
+  font-size: 18px;
+  padding: 7px 13px;
+  border-radius: 5px;
+}
+
+li a:hover{
+  background:rgb(0, 225, 255);
+  transition: .5s;
+}
+
+.navbar__link {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Hasta */
+@media screen and (max-width: 768px) {
+  .navbar__nav {
+    position: absolute;
+    top: var(--navbar-height);
+    width: 100%;
+    left: 0;
+    background-color: rgb(199, 60, 241);
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    z-index: 1;
+    transition: all .3s ease-in-out;
+  }
+
+  .navbar__list {
+    flex-direction: column;
+    opacity: 0;
+    height: 0;
+    transition: all .2s ease-in-out;
+  }
+
+  li a:hover{
+    background:none;
+    color: rgb(246, 250, 42);
+  }
+}
+
+.navbar__nav.active {
+  padding: 20px 0;
+  height: auto;
+}
+
+.navbar__nav.active .navbar__list {
+  opacity: 1;
+  height: auto;
+}
+
+.navbar__btn {
+  padding-right: 15px;
+}
+
+.navbar__btn-link {
+  background-color: white;
+  border: none;
+  outline: none;
+  color: #333;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about {
+  background-image: url("https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580");
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  height: calc(100% - 80px);
+}
+
+.about__container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.about__content {
+  width: 100%;
+  background-color: #ff9c3ee8;
+  padding: 8px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.wrapper {
+  background-image: url("https://img.freepik.com/vector-gratis/fondo-patron-huesos_1377-70.jpg?t=st=1653059934~exp=1653060534~hmac=76a6b4b81a45fef04c5fa66517d55d88276e78bd64b92fb7b91a4a6147aef221&w=740");
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  /* border: 1px solid blueviolet; */
+}
+
+.wrapper__container {
+  padding: 20px;
+  border: 4px solid lightcoral;
+}
+
+.wrapper__products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  text-align: center;
+}
+
+.wrapper__content img{
+  margin-top: 10px;
+  width: 250px;
+  height: 370px;
+}
+
+.wrapper__product-btn-item{
+  font-size: 15px;
+  border-radius: 5px;
+  border-bottom:  rgb(240, 76, 76);
+  background-color: rgb(240, 76, 76);
+}
+
+.wrapper__sidebar {
+  padding: 20px;
+  border: 4px solid lightgreen;
+}
+
+.cart__item-img{
+  margin-top: 10px;
+  width: 228px;
+  height: 370px;
+}
+
+.cart__item-img-item{
+  width: 228px;
+  height: 370px;
+}
+
+.footer {
+  background-color: #f1a55de1;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Desde */
+
+@media screen and (min-width: 500px) {
+  .about__content {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    flex-direction: row;
+  }
+
+  .wrapper__container {
+    width: 70%;
+  }
+
+  .wrapper__sidebar {
+    width: 30%;
+  }
+
+  .navbar__btn-link {
+    visibility: hidden;
+  }
+
+  .about__content {
+    width: 35%;
+  }
+}
